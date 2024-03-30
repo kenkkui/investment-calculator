@@ -1,3 +1,36 @@
+/* @keyframes rectangle-animation {
+
+  to {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+  }
+}
+
+@keyframes shrink-animation {
+  to {
+    transform: translateY(-220%);
+  }
+}
+
+@keyframes line-disappear {
+  from {
+    transform: translateY(0);
+  }
+
+  to {
+    transform: translateY(-100%);
+  }
+}
+
+@keyframes line-shrink {
+  from {
+    height: 100%;
+  }
+
+  to {
+    height: 320px;
+  }
+} */
+
 * {
   box-sizing: border-box;
   padding: 0;
@@ -7,3 +40,125 @@ html,body {
   font-family: "Inter", sans-serif;
   color: #ffffff;
 }
+
+
+#page {
+  background: #161616;
+  height: 100vh;
+  width: 100vw;
+
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+}
+
+#part1 {
+  height: inherit;
+  position: relative;
+
+  grid-column: 1/4;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  align-items: end;
+
+}
+
+#part1 .content-container {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+
+  background: lightblue;
+  padding: 25px 30px;
+}
+
+#part1 .content-container .content {
+  height: 100%;
+  width: 100%;
+  background-color: lightcoral;
+}
+
+.title {
+  font-family: Arial, sans-serif;
+  font-size: 94px;
+  text-transform: uppercase;
+  white-space: nowrap;
+
+  background-color: blue;
+}
+
+.input-container {
+  width: 100%;
+  height: 225px;
+  padding: 40px 26px;
+
+  background: #1c1c1c;
+  border-radius: 10px;
+}
+
+#part2 {
+  height: inherit;
+
+  grid-column: 4/8;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  align-items: end;
+}
+
+#page .rectangle-frame {
+  border-left: 1px solid rgba(255, 255, 255, 0.1);
+  height: 100%;
+  width: 100%;
+
+  display: flex;
+  align-items: flex-end;
+}
+
+#page .rectangle-frame:nth-child(2) {
+  animation: line-shrink 1.2s cubic-bezier(0.8, 0.2, 0.2, 0.8) forwards 3.3s;
+}
+
+#page .rectangle-frame:nth-child(3) {
+  animation: line-shrink 1.5s cubic-bezier(0.8, 0.2, 0.2, 0.8) forwards 3.4s;
+}
+
+#page .rectangle-frame:nth-child(5),
+#page .rectangle-frame:nth-child(6),
+#page .rectangle-frame:nth-child(7) {
+  animation: line-disappear 1.2s cubic-bezier(1, 0.5, 0.5, 1) forwards 3.32s;
+}
+
+.rectangle-frame .rectangle {
+  width: 100%;
+
+  animation: shrink-animation 1.4s cubic-bezier(1, 0.2, 0.4, 0.6) forwards 1.8s;
+}
+
+.rectangle-frame:nth-child(1) .rectangle { height: 400px; }
+.rectangle-frame:nth-child(2) .rectangle { height: 590px; }
+.rectangle-frame:nth-child(3) .rectangle { height: 500px; }
+.rectangle-frame:nth-child(4) .rectangle { height: 336px; }
+.rectangle-frame:nth-child(5) .rectangle { height: 640px; }
+.rectangle-frame:nth-child(6) .rectangle { height: 432px; }
+.rectangle-frame:nth-child(7) .rectangle { height: 536px; }
+
+.rectangle-frame .rectangle::before {
+  content: "";
+  display: block;
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0),
+    rgba(255, 255, 255, 0.1)
+  );
+
+  animation: rectangle-animation 1000ms linear forwards;
+}
+
+.rectangle-frame:nth-child(1) .rectangle::before { animation-delay: 100ms; }
+.rectangle-frame:nth-child(2) .rectangle::before { animation-delay: 200ms; }
+.rectangle-frame:nth-child(3) .rectangle::before { animation-delay: 300ms; }
+.rectangle-frame:nth-child(4) .rectangle::before { animation-delay: 400ms; }
+.rectangle-frame:nth-child(5) .rectangle::before { animation-delay: 300ms; }
+.rectangle-frame:nth-child(6) .rectangle::before { animation-delay: 200ms; }
+.rectangle-frame:nth-child(7) .rectangle::before { animation-delay: 100ms; }
