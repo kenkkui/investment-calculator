@@ -85,39 +85,33 @@ html,body {
   top: 0;
   width: 100%;
   
-  padding: 25px 30px;
-  
-  opacity: 0;
-  filter: blur(10px);
-  transform: translateX(-10%);
+  padding: 25px 30px; 
 }
 
-#part1 .content-container.visible {
-  filter: none;
-  opacity: 1;
-  transform: translateX(0%);
-  
+@keyframes bg-in {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
 }
 
 #part1 .content-container::before{
   content: "";
-  z-index: -1;
   transform: translate(-30px, -25px);
   position: absolute;
   height: 100%;
   width: 100%;
-  
+
   opacity: 0;
-  transition: 500ms cubic-bezier(0.8, 0.2, 0.3, 0.6);
+  background: #161616;
+  animation: bg-in 1.2s linear forwards;
 }
-
-#part1 .content-container.visible::before {
-  opacity: 1;
-  background: red;
-}
-
 
 #part1 .content-container .content {
+  position: relative;
   height: 100%;
   width: 100%;
 }
@@ -167,7 +161,15 @@ html,body {
 .content-container .content .title .character-wrapper:nth-child(20) .character { animation-delay: 1000ms;}
 .content-container .content .title .character-wrapper:nth-child(21) .character { animation-delay: 1050ms;}
 
+@keyframes input-animation {
+  from {
+    width: 0;
+  }
 
+  to {
+    width: 100%;
+  }
+}
 
 .content-container .input-container {
   width: 100%;
@@ -178,6 +180,8 @@ html,body {
   border-radius: 10px;
 
   display: flex;
+
+  animation: input-animation cubic-bezier(0.9, 0.2, 0.5, 0.8) forwards 500ms;
 }
 
 #part2 {

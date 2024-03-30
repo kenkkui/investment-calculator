@@ -7,22 +7,16 @@ import "./Index.css"
 import "./components/Foreground.css"
 
 function App() {
-  const animationDoneElem = useRef();
   const [showContent, setShowContent] = useState(false);
 
-  useEffect(() => {
-    if (animationDoneElem) {
-      const element = animationDoneElem.current;
-
-      element.addEventListener("animationend", (e) => {
-        if (e.target === e.currentTarget) {
-          setShowContent(true)
-        }
-      })
-    }
-  }, [])
-
   const headTitle = "INVESTMENT CALCULATOR"
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setShowContent(true)
+    }, 4000)
+
+    return () => clearTimeout(timer)
+  }, [])
 
 
   return (
@@ -31,9 +25,7 @@ function App() {
       <section id="page">
         <section id="part1">
           <Rectangle />
-          <Rectangle 
-            forwardedRef={animationDoneElem}
-          />
+          <Rectangle />
           <Rectangle />
 
           {/* {showContent && <main className={`content-container ${showContent ? "visible" : undefined}`}> */}

@@ -1,6 +1,6 @@
-export default function Rectangle({ forwardedRef }) {
+export default function Rectangle() {
   return (
-    <div className="rectangle-frame" ref={forwardedRef}>
+    <div className="rectangle-frame">
       <div className="rectangle"></div>
     </div>
   )
