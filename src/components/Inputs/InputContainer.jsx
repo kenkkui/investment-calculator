@@ -1,29 +1,34 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Input from './Input';
 import InputWrapper from './InputWrapper';
 
 import "./Input.css"
 
-function InputContainer({ forwardedRef }) {
-  return (
-    <div className="input-container" ref={forwardedRef}>
-      <InputWrapper>
-        <Input 
-          title="Initial Investment"
-        />
-        <Input 
-          title="Annual Investment"
-        />
-      </InputWrapper>
+function InputContainer() {
+  const [inputRender, setInputRender] = useState(false);
 
-      <InputWrapper>
-        <Input 
-          title="Duration"
-        />
-        <Input 
-          title="Expected Return"
-        />
-      </InputWrapper>
+
+  return (
+    <div className="input-container" onAnimationEnd={() => setInputRender(true)}>
+      {inputRender && <>
+        <InputWrapper>
+          <Input 
+            title="Initial Investment"
+          />
+          <Input 
+            title="Annual Investment"
+          />
+        </InputWrapper>
+
+        <InputWrapper>
+          <Input 
+            title="Duration"
+          />
+          <Input 
+            title="Expected Return"
+          />
+        </InputWrapper>
+      </>}
     </div>
   );
 }

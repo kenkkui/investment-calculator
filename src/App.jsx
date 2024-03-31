@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Rectangle from './components/Rectangle';
 
 import InputContainer from './components/Inputs/InputContainer';
@@ -8,7 +8,6 @@ import "./components/Foreground.css"
 
 function App() {
   const [showContent, setShowContent] = useState(false);
-  const inputContainerElem = useRef();
 
   const headTitle = "INVESTMENT CALCULATOR"
   useEffect(() => {
@@ -18,17 +17,6 @@ function App() {
 
     return () => clearTimeout(timer)
   }, [])
-
-  useEffect(() => {
-    if (inputContainerElem) {
-      const element = inputContainerElem.current;
-
-      element.addEventListener("animationend", () => {
-        
-      })
-    }
-  }, [showContent])
-
 
   return (
     <>
@@ -52,9 +40,7 @@ function App() {
               </div>
             })}</div>
 
-              <InputContainer
-                forwardedRef={inputContainerElem}
-              />
+              <InputContainer />
               <section id="author-container">
 
               </section>
