@@ -31,6 +31,16 @@
   }
 }
 
+@keyframes bg-in {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
 @keyframes stuggered-animation {
   from {
     transform: translateX(-60px);
@@ -86,16 +96,6 @@ html,body {
   width: 100%;
   
   padding: 25px 30px; 
-}
-
-@keyframes bg-in {
-  from {
-    opacity: 0;
-  }
-
-  to {
-    opacity: 1;
-  }
 }
 
 #part1 .content-container::before{

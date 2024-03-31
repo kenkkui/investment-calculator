@@ -4,9 +4,9 @@ import InputWrapper from './InputWrapper';
 
 import "./Input.css"
 
-function InputContainer() {
+function InputContainer({ forwardedRef }) {
   return (
-    <div className="input-container">
+    <div className="input-container" ref={forwardedRef}>
       <InputWrapper>
         <Input 
           title="Initial Investment"

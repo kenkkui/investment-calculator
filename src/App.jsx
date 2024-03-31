@@ -8,6 +8,7 @@ import "./components/Foreground.css"
 
 function App() {
   const [showContent, setShowContent] = useState(false);
+  const inputContainerElem = useRef();
 
   const headTitle = "INVESTMENT CALCULATOR"
   useEffect(() => {
@@ -17,6 +18,16 @@ function App() {
 
     return () => clearTimeout(timer)
   }, [])
+
+  useEffect(() => {
+    if (inputContainerElem) {
+      const element = inputContainerElem.current;
+
+      element.addEventListener("animationend", () => {
+        
+      })
+    }
+  }, [showContent])
 
 
   return (
@@ -41,7 +52,9 @@ function App() {
               </div>
             })}</div>
 
-              <InputContainer />
+              <InputContainer
+                forwardedRef={inputContainerElem}
+              />
               <section id="author-container">
 
               </section>
