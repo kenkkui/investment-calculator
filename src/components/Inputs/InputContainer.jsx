@@ -4,9 +4,9 @@ import InputWrapper from './InputWrapper';
 
 import "./Input.css"
 
-function InputContainer() {
+function InputContainer({ setTable }) {
   const [inputRender, setInputRender] = useState(false);
-
+  
 
   return (
     <div className="input-container" onAnimationEnd={() => setInputRender(true)}>

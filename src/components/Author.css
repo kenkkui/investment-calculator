@@ -30,8 +30,11 @@
 #author-container .line:nth-of-type(3) .word:hover {
   cursor: pointer;
 
-  transition: 0.15s;
+  transition: 0.05s;
   color: rgba(255, 255, 255, 1);
+  font-style: italic;
+
+  translate: 4px;
 }
 
 #author-container:has(.special:hover) .word:not(.special:hover) {

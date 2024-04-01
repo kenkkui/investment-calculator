@@ -5,7 +5,7 @@ const headTitle = "INVESTMENT CALCULATOR"
 
 function Title() {
   return (
-    <div className="title">{headTitle.split("").map((item, index) => {
+    <div id="doc-title">{headTitle.split("").map((item, index) => {
       return <div className='character-wrapper' key={index}>
         <div className='character'>
           {item}

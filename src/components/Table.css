@@ -1,10 +1,7 @@
 table {
   position: absolute;
-  top: 150px;
+  top: 160px;
   bottom: 0;
   padding: 0px 30px;
   width: 100%;
-
-
-  /* background: lightblue; */
 }

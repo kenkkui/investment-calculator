@@ -11,7 +11,12 @@ import Title from './Title';
 
 function App() {
   const [showContent, setShowContent] = useState(false);
-
+  const [table, setTable] = useState({
+    initialInvestment: "",
+    annualInvestment: "",
+    expectedReturn: "",
+    duration: ""
+  });
   
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -37,12 +42,13 @@ function App() {
 
           {showContent && <main className="content-container">
             <div className="content">
-                <InputContainer />
-                
+                <InputContainer 
+                  setTable={setTable}
+                />
             </div>
           </main>}
 
-          {/* <Author /> */}
+          <Author />
         </section>
 
         <section id="part2">
