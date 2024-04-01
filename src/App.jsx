@@ -6,7 +6,7 @@ import InputContainer from './components/Inputs/InputContainer';
 import "./Index.css"
 import "./components/Foreground.css"
 import Table from './components/Table';
-import Author from './Author';
+import Author from './components/Author';
 import Title from './Title';
 
 function App() {
@@ -18,6 +18,8 @@ function App() {
       setShowContent(true)
     }, 4000)
 
+    
+
     return () => clearTimeout(timer)
   }, [])
 
@@ -26,6 +28,8 @@ function App() {
       {/* <section id="foreground"></section> */}
 
       <section id="page">
+        <Title />
+
         <section id="part1">
           <Rectangle />
           <Rectangle />
@@ -33,13 +37,12 @@ function App() {
 
           {showContent && <main className="content-container">
             <div className="content">
-                <Title />
                 <InputContainer />
                 
             </div>
           </main>}
 
-          <Author />
+          {/* <Author /> */}
         </section>
 
         <section id="part2">

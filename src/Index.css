@@ -6,8 +6,12 @@
 }
 
 @keyframes shrink-animation {
-  to {
+  50% {
     transform: translateY(-220%);
+  }
+
+  to {
+    transform: translateY(-500%);
   }
 }
 
@@ -93,7 +97,7 @@ html,body {
 
 #part1 .content-container {
   position: absolute;
-  top: 0;
+  top: 125px;
   width: 100%;
   
   padding: 25px 30px; 
@@ -117,50 +121,7 @@ html,body {
   width: 100%;
 }
 
-.content-container .content > .title {
-  font-family: Arial, sans-serif;
-  font-size: 94px;
-  text-transform: uppercase;
-  white-space: nowrap;
 
-  display: flex;
-
-}
-
-.content-container .content .title .character-wrapper {
-  position: relative;
-  height: auto;
-}
-
-.title .character-wrapper .character {
-  position: relative;
-  inset: 0;
-
-  opacity: 0;
-  animation: stuggered-animation cubic-bezier(0, 0, 0.4, 1) forwards 1000ms;
-}
-
-.content-container .content .title .character-wrapper:nth-child(1) .character { animation-delay: 50ms;}
-.content-container .content .title .character-wrapper:nth-child(2) .character { animation-delay: 100ms;}
-.content-container .content .title .character-wrapper:nth-child(3) .character { animation-delay: 150ms;}
-.content-container .content .title .character-wrapper:nth-child(4) .character { animation-delay: 200ms;}
-.content-container .content .title .character-wrapper:nth-child(5) .character { animation-delay: 250ms;}
-.content-container .content .title .character-wrapper:nth-child(6) .character { animation-delay: 300ms;}
-.content-container .content .title .character-wrapper:nth-child(7) .character { animation-delay: 350ms;}
-.content-container .content .title .character-wrapper:nth-child(8) .character { animation-delay: 400ms;}
-.content-container .content .title .character-wrapper:nth-child(9) .character { animation-delay: 450ms;}
-.content-container .content .title .character-wrapper:nth-child(10) .character { animation-delay: 500ms;}
-.content-container .content .title .character-wrapper:nth-child(11) .character { animation-delay: 550ms; width: 30px;}
-.content-container .content .title .character-wrapper:nth-child(12) .character { animation-delay: 600ms;}
-.content-container .content .title .character-wrapper:nth-child(13) .character { animation-delay: 650ms;}
-.content-container .content .title .character-wrapper:nth-child(14) .character { animation-delay: 700ms;}
-.content-container .content .title .character-wrapper:nth-child(15) .character { animation-delay: 750ms;}
-.content-container .content .title .character-wrapper:nth-child(16) .character { animation-delay: 800ms;}
-.content-container .content .title .character-wrapper:nth-child(17) .character { animation-delay: 850ms;}
-.content-container .content .title .character-wrapper:nth-child(18) .character { animation-delay: 900ms;}
-.content-container .content .title .character-wrapper:nth-child(19) .character { animation-delay: 950ms;}
-.content-container .content .title .character-wrapper:nth-child(20) .character { animation-delay: 1000ms;}
-.content-container .content .title .character-wrapper:nth-child(21) .character { animation-delay: 1050ms;}
 
 @keyframes input-animation {
   from {
@@ -186,7 +147,8 @@ html,body {
 }
 
 #part2 {
-  height: inherit;
+  height: 100%;
+  position: relative;
 
   grid-column: 4/8;
   display: grid;
@@ -220,7 +182,7 @@ html,body {
 .rectangle-frame .rectangle {
   width: 100%;
 
-  animation: shrink-animation 1.4s cubic-bezier(1, 0.2, 0.4, 0.6) forwards 1.8s;
+  animation: shrink-animation 2.8s cubic-bezier(1, 0.2, 0.4, 0.6) forwards 1.8s;
 }
 
 #part1 .rectangle-frame:nth-child(1) .rectangle { height: 400px; }

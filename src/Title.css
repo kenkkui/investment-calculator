@@ -1,0 +1,47 @@
+.title {
+  position: absolute;
+  top: 15px;
+  left: 25px;
+  grid-column: 1/9;
+  display: flex;
+
+  font-family: Arial, sans-serif;
+  font-size: 94px;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.title .character-wrapper {
+  position: relative;
+  height: auto;
+}
+
+.title .character-wrapper .character {
+  position: relative;
+  inset: 0;
+
+  opacity: 0;
+  animation: stuggered-animation cubic-bezier(0, 0, 0.4, 1) forwards 1000ms;
+}
+
+.title .character-wrapper:nth-child(1) .character { animation-delay: 50ms;}
+.title .character-wrapper:nth-child(2) .character { animation-delay: 100ms;}
+.title .character-wrapper:nth-child(3) .character { animation-delay: 150ms;}
+.title .character-wrapper:nth-child(4) .character { animation-delay: 200ms;}
+.title .character-wrapper:nth-child(5) .character { animation-delay: 250ms;}
+.title .character-wrapper:nth-child(6) .character { animation-delay: 300ms;}
+.title .character-wrapper:nth-child(7) .character { animation-delay: 350ms;}
+.title .character-wrapper:nth-child(8) .character { animation-delay: 400ms;}
+.title .character-wrapper:nth-child(9) .character { animation-delay: 450ms;}
+.title .character-wrapper:nth-child(10) .character { animation-delay: 500ms;}
+.title .character-wrapper:nth-child(11) .character { animation-delay: 550ms; width: 30px;}
+.title .character-wrapper:nth-child(12) .character { animation-delay: 600ms;}
+.title .character-wrapper:nth-child(13) .character { animation-delay: 650ms;}
+.title .character-wrapper:nth-child(14) .character { animation-delay: 700ms;}
+.title .character-wrapper:nth-child(15) .character { animation-delay: 750ms;}
+.title .character-wrapper:nth-child(16) .character { animation-delay: 800ms;}
+.title .character-wrapper:nth-child(17) .character { animation-delay: 850ms;}
+.title .character-wrapper:nth-child(18) .character { animation-delay: 900ms;}
+.title .character-wrapper:nth-child(19) .character { animation-delay: 950ms;}
+.title .character-wrapper:nth-child(20) .character { animation-delay: 1000ms;}
+.title .character-wrapper:nth-child(21) .character { animation-delay: 1050ms;}
