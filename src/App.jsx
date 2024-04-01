@@ -5,11 +5,14 @@ import InputContainer from './components/Inputs/InputContainer';
 
 import "./Index.css"
 import "./components/Foreground.css"
+import Table from './components/Table';
+import Author from './Author';
+import Title from './Title';
 
 function App() {
   const [showContent, setShowContent] = useState(false);
 
-  const headTitle = "INVESTMENT CALCULATOR"
+  
   useEffect(() => {
     const timer = setTimeout(() => {
       setShowContent(true)
@@ -21,32 +24,22 @@ function App() {
   return (
     <>
       {/* <section id="foreground"></section> */}
+
       <section id="page">
         <section id="part1">
           <Rectangle />
           <Rectangle />
           <Rectangle />
 
-          {/* {showContent && <main className={`content-container ${showContent ? "visible" : undefined}`}> */}
           {showContent && <main className="content-container">
-            <div className="background"></div>
             <div className="content">
-
-            <div className="title">{headTitle.split("").map(item => {
-              return <div className='character-wrapper'>
-                <div className='character'>
-                {item}
-                </div>
-              </div>
-            })}</div>
-
-              <InputContainer />
-              <section id="author-container">
-
-              </section>
+                <Title />
+                <InputContainer />
+                
             </div>
           </main>}
 
+          <Author />
         </section>
 
         <section id="part2">
@@ -54,6 +47,8 @@ function App() {
           <Rectangle />
           <Rectangle />
           <Rectangle />
+
+          <Table />
         </section>
       </section>
     </>

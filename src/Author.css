@@ -1,0 +1,36 @@
+#author-container {
+  z-index: 10;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 250px;
+  margin: 20px 15px;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+#author-container .line {
+  display: flex;
+  justify-content: space-between;
+}
+
+#author-container .line span {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 16px;
+
+  text-transform: uppercase;
+}
+
+#author-container .line:nth-of-type(3) span.active {
+  cursor: pointer;
+
+  transition: 0.15s;
+  color: rgba(255, 255, 255, 1);
+}
+
+#author-container span:hover{
+  color: rgba(255, 255, 255, 0.2);
+}
+
+#author-container:hover span:has(.active) {
+  color: rgba(255, 255, 255, 1);
+}
