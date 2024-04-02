@@ -4,32 +4,31 @@ import InputWrapper from './InputWrapper';
 
 import "./Input.css"
 
-const inputs = [
-  [
-    {
-      name: "Initial Investment",
-      value: table.initialInvestment
-    },
-    {
-      name: "Annual Investment",
-      value: table.annulaInvestment
-    },
-  ],
-  [
-    {
-      name: "Expected Return",
-      value: table.expectedReturn
-    },
-    {
-      name: "Duration",
-      value: table.duration
-    },
-  ]
-]
 
 function InputContainer({ setTable, table }) {
   const [inputRender, setInputRender] = useState(false);
-
+  const inputs = [
+    [
+      {
+        name: "Initial Investment",
+        value: table.initialInvestment
+      },
+      {
+        name: "Annual Investment",
+        value: table.annualInvestment
+      },
+    ],
+    [
+      {
+        name: "Expected Return",
+        value: table.expectedReturn
+      },
+      {
+        name: "Duration",
+        value: table.duration
+      },
+    ]
+  ]
 
   return (
     <div className="input-container" onAnimationEnd={() => setInputRender(true)}>
@@ -39,9 +38,9 @@ function InputContainer({ setTable, table }) {
             {item.map((item, index) => {
               return <Input 
                 key={index}
-                title={item}
+                title={item.name}
+                value={item.value}
                 setTable={setTable}
-                table={table}
               />
             })}
           </InputWrapper>
