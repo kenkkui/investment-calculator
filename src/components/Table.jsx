@@ -1,9 +1,15 @@
 import React from 'react';
 import TableRow from './TableRow';
+import { calculateInvestmentResults, formatter } from '../util/investment';
 
 import "./Table.css"
 
-function Table() {
+function Table({ table }) {
+  const resultData = calculateInvestmentResults(table)
+  console.log(resultData);
+
+
+
   return (
     <table>
       <tr id='table-header'>
@@ -13,7 +19,6 @@ function Table() {
         <th>Investment Total Interest</th>
         <th>Invested Capital</th>
       </tr>
-    
     </table>
   );
 }

@@ -19,11 +19,6 @@ function App() {
     expectedReturn: 60,
     duration: 12  
   });
-
-  useEffect(() => {
-    const final = calculateInvestmentResults(table)
-    console.log(final);
-  }, [table])
   
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -65,7 +60,9 @@ function App() {
           <Rectangle />
           <Rectangle />
 
-          <Table />
+          <Table 
+            table={table}
+          />
         </section>
       </section>
     </>
