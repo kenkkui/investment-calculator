@@ -1,11 +1,10 @@
 import React from 'react';
 
 
-function Input({ title, setTable }) {
+function Input({ title, setTable, value }) {
 
   function handleChange(e) {
     const value = e.target.value;
-
 
     const updatedValues = {
       initialInvestment: title === "Initial Investment" ? value : undefined,
@@ -19,8 +18,13 @@ function Input({ title, setTable }) {
 
   return (
     <div className="input">
-      <div className="title">{title}</div>
-      <input type='text' onChange={handleChange} />
+      <label className="title">{title}</label>
+      <input 
+        type='number' 
+        required 
+        onChange={handleChange} 
+        value={value}
+      />
     </div>
   );
 }

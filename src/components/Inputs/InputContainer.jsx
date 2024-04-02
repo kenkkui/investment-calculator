@@ -6,16 +6,28 @@ import "./Input.css"
 
 const inputs = [
   [
-    "Initial Investment",
-    "Annual Investment",
+    {
+      name: "Initial Investment",
+      value: table.initialInvestment
+    },
+    {
+      name: "Annual Investment",
+      value: table.annulaInvestment
+    },
   ],
   [
-    "Duration",
-    "Expected Return"
+    {
+      name: "Expected Return",
+      value: table.expectedReturn
+    },
+    {
+      name: "Duration",
+      value: table.duration
+    },
   ]
 ]
 
-function InputContainer({ setTable }) {
+function InputContainer({ setTable, table }) {
   const [inputRender, setInputRender] = useState(false);
 
 
@@ -29,6 +41,7 @@ function InputContainer({ setTable }) {
                 key={index}
                 title={item}
                 setTable={setTable}
+                table={table}
               />
             })}
           </InputWrapper>

@@ -1,25 +1,28 @@
 import React, { useEffect, useState } from 'react';
 import Rectangle from './components/Rectangle';
 
-import InputContainer from './components/Inputs/InputContainer';
-
 import "./Index.css"
 import "./components/Foreground.css"
+
 import Table from './components/Table';
 import Author from './components/Author';
 import Title from './Title';
+import InputContainer from './components/Inputs/InputContainer';
+
+import { calculateInvestmentResults, formatter } from './util/investment';
 
 function App() {
   const [showContent, setShowContent] = useState(false);
   const [table, setTable] = useState({
-    initialInvestment: undefined,
-    annualInvestment: undefined,
-    expectedReturn: undefined,
-    duration: undefined
+    initialInvestment: 100000,
+    annualInvestment: 120000,
+    expectedReturn: 60,
+    duration: 12  
   });
 
   useEffect(() => {
-    console.log(table);
+    const final = calculateInvestmentResults(table)
+    console.log(final);
   }, [table])
   
   useEffect(() => {
@@ -48,6 +51,7 @@ function App() {
             <div className="content">
                 <InputContainer 
                   setTable={setTable}
+                  table={table}
                 />
             </div>
           </main>}
