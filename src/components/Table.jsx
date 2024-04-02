@@ -1,4 +1,6 @@
 import React from 'react';
+import TableRow from './TableRow';
+
 import "./Table.css"
 
 function Table() {
@@ -11,6 +13,7 @@ function Table() {
         <th>Investment Total Interest</th>
         <th>Invested Capital</th>
       </tr>
+    
     </table>
   );
 }

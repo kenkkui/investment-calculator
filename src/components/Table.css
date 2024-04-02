@@ -4,4 +4,6 @@ table {
   bottom: 0;
   padding: 0px 30px;
   width: 100%;
+
+  background: blue;
 }

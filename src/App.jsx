@@ -17,6 +17,10 @@ function App() {
     expectedReturn: "",
     duration: ""
   });
+
+  useEffect(() => {
+    console.log(table);
+  }, [setTable])
   
   useEffect(() => {
     const timer = setTimeout(() => {
