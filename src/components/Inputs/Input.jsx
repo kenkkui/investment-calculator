@@ -7,45 +7,14 @@ function Input({ title, setTable }) {
     const value = e.target.value;
 
 
-    if (title === "Initial Investment") {
-      setTable(prev => {
-        console.log("working");
-        // return {
-        //   initialInvestment: value,
-        //   annualInvestment: prev.annualInvestment,
-        //   expectedReturn: prev.expectedReturn,
-        //   duration: prev.duration
-        // }
-      })
-    } else if (title === "Annual Investment") {
-        // setTable(prev => {
-        //   return {
-        //     initialInvestment: prev.initialInvestment,
-        //     annualInvestment: value,
-        //     expectedReturn: prev.expectedReturn,
-        //     duration: prev.duration
-        //   }
-        // })
-    } else if (title === "Expected Return") {
-        // setTable(prev => {
-        //   return {
-        //     initialInvestment: prev.initialInvestment,
-        //     annualInvestment: prev.annualInvestment,
-        //     expectedReturn: value,
-        //     duration: prev.duration
-        //   }
-        // })
-    } else if (title === "Duration") {
-        // setTable(prev => {
-        //   return {
-        //     initialInvestment: prev.initialInvestment,
-        //     annualInvestment: prev.annualInvestment,
-        //     expectedReturn: prev.expectedReturn,
-        //     duration: value
-        //   }
-        // })
-    }
+    const updatedValues = {
+      initialInvestment: title === "Initial Investment" ? value : undefined,
+      annualInvestment: title === "Annual Investment" ? value : undefined,
+      expectedReturn: title === "Expected Return" ? value : undefined,
+      duration: title === "Duration" ? value : undefined
+    };
 
+    setTable(prev => ({ ...prev, ...updatedValues }));
   }
 
   return (

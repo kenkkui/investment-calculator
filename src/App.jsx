@@ -12,15 +12,15 @@ import Title from './Title';
 function App() {
   const [showContent, setShowContent] = useState(false);
   const [table, setTable] = useState({
-    initialInvestment: "",
-    annualInvestment: "",
-    expectedReturn: "",
-    duration: ""
+    initialInvestment: undefined,
+    annualInvestment: undefined,
+    expectedReturn: undefined,
+    duration: undefined
   });
 
   useEffect(() => {
     console.log(table);
-  }, [setTable])
+  }, [table])
   
   useEffect(() => {
     const timer = setTimeout(() => {
